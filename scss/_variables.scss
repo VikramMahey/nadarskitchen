@@ -1,0 +1,62 @@
+/* ------------------------------------------
+  VARIABLES
+------------------------------------------ */
+
+/* Colors */
+// Color Palette: Futuristic Tech
+// _variables.scss
+$color-bg: #ffffff;               // Base background – clean white
+$color-surface: #f0f3bdff;        // Light cream – soft contrast sections
+
+// Text Colors
+$color-text: #1b1b1b;             // Rich dark gray – main body text
+$color-text-light: #5f6368;       // Muted secondary text
+$color-text-white: #ffffff;       // For dark backgrounds/buttons
+
+$color-heading: #05668dff;        // Lapis Lazuli – used for <h1> to <h3>
+$color-heading-alt: #D92C54;      // Raspberry red – for key callouts (like section titles)
+$color-subheading: #028090ff;     // Teal – subtle emphasis (used in cards, tags)
+$color-heading: #fb5607; // Orange Pantone — bright, energetic, and food-friendly
+
+
+// Primary Colors
+$color-primary: #05668dff;        // Brand base
+$color-secondary: #D92C54;        // Bold accent – buttons/CTAs
+
+// Accent / Action
+$color-accent: #00a896ff;         // Persian green – for links, icons, highlights
+
+// Borders & Misc
+$color-border: #e4e4e4;           // Soft gray border
+$color-shadow: rgba(0, 0, 0, 0.05);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonts */
+$font-family: 'Helvetica Neue', sans-serif;
+
+/* Spacing */
+$section-padding: 4rem 0;
+
+/* ------------------------------------------
+  BREAKPOINTS
+------------------------------------------ */
+$breakpoint-xsmall: 480px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xxlarge: 1400px;
+

@@ -1,0 +1,210 @@
+@import "variables";
+@import "mixins";
+@import "global/header";
+
+
+@import "sections/hero";
+// @import "global/footer";
+
+@import "components/buttons";
+@import "components/text-color";
+@import "components/padding";
+// ==============================
+// Global Styling for main.scss
+// ==============================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 1️⃣ Base HTML & Body
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: $color-text;
+  line-height: 1.6;
+  background-color: $color-bg;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  padding: 120px 0;
+}
+
+// 2️⃣ Global Container
+.container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+// 3️⃣ Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  color: $color-primary;
+
+  @include small {
+    font-weight: 600;
+  }
+}
+
+h1 {
+  font-size: 48px;
+
+  @include large {
+    font-size: 40px;
+  }
+  @include medium {
+    font-size: 32px;
+  }
+  @include small {
+    font-size: 28px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+
+  @include large {
+    font-size: 35px;
+  }
+  @include medium {
+    font-size: 30px;
+  }
+  @include small {
+    font-size: 26px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+
+  @include large {
+    font-size: 28px;
+  }
+  @include medium {
+    font-size: 24px;
+  }
+  @include small {
+    font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 26px;
+
+  @include large {
+    font-size: 24px;
+  }
+  @include medium {
+    font-size: 22px;
+  }
+  @include small {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+
+  @include medium {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font-size: 16px;
+
+  @include medium {
+    font-size: 15px;
+  }
+}
+
+// 4️⃣ Paragraphs
+p {
+  margin: 0 0 16px;
+  color: lighten($color-text, 5%);
+  line-height: 1.6;
+
+  @include small {
+    font-size: 15px;
+  }
+}
+
+// 5️⃣ Links
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: lighten($color-accent, 10%);
+    text-decoration: underline;
+  }
+}
+
+// 6️⃣ Lists
+ul, ol {
+  margin: 0 0 16px 24px;
+  padding: 0;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+// 7️⃣ Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// 8️⃣ Buttons
+button,
+input[type="button"],
+input[type="submit"] {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: $color-secondary;
+  color: $color-text-white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+  }
+
+  @include small {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+// 9️⃣ Forms
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid lighten($color-primary, 20%);
+  border-radius: 4px;
+  background-color: lighten($color-bg, 2%);
+  color: $color-text;
+
+  @include small {
+    font-size: 14px;
+  }
+}

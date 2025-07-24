@@ -1,0 +1,45 @@
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: inherit;
+  cursor: pointer;
+
+  @include small {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+
+  &--primary {
+    background-color: $color-secondary;
+    color: $color-bg;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+      text-decoration: none;
+      color: aliceblue;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: 2px solid $color-accent;
+    color: $color-accent;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.1);
+      border-color: darken($color-accent, 5%);
+      text-decoration: none;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: 2px solid lighten($color-accent, 20%);
+    outline-offset: 2px;
+  }
+}

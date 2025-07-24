@@ -1,0 +1,126 @@
+.footer {
+  background-color: lighten($color-primary, 5%);
+  color: $color-text-white;
+  padding: 3rem 0 1.5rem;
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer__branding {
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: $color-text-white;
+
+      span {
+        color: $color-secondary;
+      }
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .footer__links,
+  .footer__contact,
+  .footer__socials {
+    text-align: left;
+
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: $color-secondary;
+    }
+  }
+
+  .footer__links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        font-size: 0.9rem;
+        color: $color-text-white;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+.footer__contact p {
+  font-size: 0.9rem;
+  color: $color-text-white;
+  margin: 0.4rem 0;
+
+  a {
+    color: $color-text-white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+
+.footer__socials {
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 36px); // updated to fit larger icons
+    gap: 0.9rem 0.5rem;
+
+    a {
+      display: block;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 26px;   // increased from 24px to 36px
+        height: 26px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease, transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+
+        img {
+          filter: brightness(0) saturate(100%) invert(47%) sepia(95%) saturate(319%) hue-rotate(111deg) brightness(100%) contrast(101%);
+        }
+      }
+    }
+  }
+}
+
+
+
+  .footer__bottom {
+    border-top: 1px solid lighten($color-primary, 15%);
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+    color: $color-text-white;
+  }
+
+  .footer__links .inner-wrapper,
+.footer__contact .inner-wrapper,
+.footer__socials .inner-wrapper {
+  width: max-content;  // width based on content
+  margin: 0 auto;      // centers the wrapper horizontally
+}
+
+}
