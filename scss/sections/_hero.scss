@@ -18,9 +18,12 @@
     flex: 1;
 
     .heading-primary {
+      span{
+       color: $color-accent;
+      }
       font-size: 2.75rem;
       font-weight: 700;
-      color: $color-heading;
+      color: #000;
       margin-bottom: 24px;
     }
 

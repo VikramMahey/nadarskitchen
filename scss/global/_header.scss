@@ -14,12 +14,37 @@
     min-height: 64px;
   }
 
-  .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: $color-text;
+  // .logo a {
+  //   font-size: 24px;
+  //   font-weight: bold;
+  //   color: $color-text;
+  //   text-decoration: none;
+  // }
+
+  .logo {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
+
+    img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: bold;
+      color:  $color-accent; 
+    }
   }
+}
+
 
   .main-nav {
     ul {

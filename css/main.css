@@ -31,11 +31,25 @@
   justify-content: space-between;
   min-height: 64px;
 }
+.site-header .logo {
+  display: flex;
+  align-items: center;
+}
 .site-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.site-header .logo a img {
+  height: 90px;
+  width: auto;
+  display: block;
+}
+.site-header .logo a span {
   font-size: 24px;
   font-weight: bold;
-  color: #1b1b1b;
-  text-decoration: none;
+  color: #00a896;
 }
 .site-header .main-nav ul {
   display: flex;
@@ -209,8 +223,11 @@
 .hero-section .hero-text .heading-primary {
   font-size: 2.75rem;
   font-weight: 700;
-  color: #fb5607;
+  color: #000;
   margin-bottom: 24px;
+}
+.hero-section .hero-text .heading-primary span {
+  color: #00a896;
 }
 .hero-section .hero-text .hero-description {
   font-size: 1.125rem;
