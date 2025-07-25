@@ -200,6 +200,30 @@
     display: flex;
   }
 }
+.site-header .mobile-tagline {
+  display: none;
+}
+@media (max-width: 768px) {
+  .site-header .mobile-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    margin-right: auto;
+  }
+  .site-header .mobile-tagline .tagline-text {
+    font-family: "Dancing Script", cursive;
+    font-size: 18px;
+    color: #D92C54;
+    line-height: 1.9;
+  }
+  .site-header .mobile-tagline .tagline-icon {
+    font-size: 20px;
+    color: #00a896;
+    margin-top: 4px;
+  }
+}
 
 .hero-section {
   padding: 80px 0;
