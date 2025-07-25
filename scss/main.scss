@@ -68,6 +68,10 @@ h1 {
   @include small {
     font-size: 28px;
   }
+  // @include xsmall {
+  //   font-size: 18px;
+  // }
+
 }
 
 h2 {
@@ -82,6 +86,10 @@ h2 {
   @include small {
     font-size: 26px;
   }
+  @include xsmall {
+    font-size: 16px;
+  }
+
 }
 
 h3 {
@@ -95,6 +103,9 @@ h3 {
   }
   @include small {
     font-size: 22px;
+  }
+   @include xsmall {
+    font-size: 11px;
   }
 }
 

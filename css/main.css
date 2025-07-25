@@ -218,6 +218,13 @@
     color: #D92C54;
     line-height: 1.9;
   }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .site-header .mobile-tagline .tagline-text {
+    line-height: 1.2;
+  }
+}
+@media (max-width: 768px) {
   .site-header .mobile-tagline .tagline-icon {
     font-size: 20px;
     color: #00a896;
@@ -254,7 +261,6 @@
   flex: 1;
 }
 .hero-section .hero-text .heading-primary {
-  font-size: 2.75rem;
   font-weight: 700;
   color: #000;
   margin-bottom: 24px;
@@ -601,6 +607,11 @@ h2 {
     font-size: 26px;
   }
 }
+@media (max-width: 480px) {
+  h2 {
+    font-size: 16px;
+  }
+}
 
 h3 {
   font-size: 32px;
@@ -618,6 +629,11 @@ h3 {
 @media (max-width: 576px) {
   h3 {
     font-size: 22px;
+  }
+}
+@media (max-width: 480px) {
+  h3 {
+    font-size: 11px;
   }
 }
 

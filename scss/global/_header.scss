@@ -22,28 +22,28 @@
   // }
 
   .logo {
-  display: flex;
-  align-items: center;
-
-  a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
 
-    img {
-      height: 90px;
-      width: auto;
-      display: block;
-    }
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
 
-    span {
-      font-size: 24px;
-      font-weight: bold;
-      color:  $color-accent; 
+      img {
+        height: 90px;
+        width: auto;
+        display: block;
+      }
+
+      span {
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-accent;
+      }
     }
   }
-}
 
 
   .main-nav {
@@ -158,27 +158,27 @@
     }
 
     // Hide "Order Now" in mobile toggle by default
-.mobile-order-btn {
-  display: none;
+    .mobile-order-btn {
+      display: none;
 
-  @include medium {
-    display: block;
+      @include medium {
+        display: block;
 
-    .order-btn {
-      background-color: $color-secondary;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s;
+        .order-btn {
+          background-color: $color-secondary;
+          color: #fff;
+          padding: 8px 16px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: background-color 0.3s;
 
-      &:hover {
-        background-color: darken($color-secondary, 10%);
+          &:hover {
+            background-color: darken($color-secondary, 10%);
+          }
+        }
       }
     }
-  }
-}
 
   }
 
@@ -222,31 +222,42 @@
     }
   }
 
-.mobile-tagline {
-  display: none;
+  .mobile-tagline {
+    display: none;
 
-  @include medium {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 12px;
-    margin-right: auto;
+    @include medium {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 12px;
+      margin-right: auto;
+    
 
-    .tagline-text {
-      font-family: 'Dancing Script', cursive;
-      font-size: 18px;
-      color: $color-secondary;
-      line-height: 1.9;
+      .tagline-text {
+        font-family: 'Dancing Script', cursive;
+        font-size: 18px;
+        color: $color-secondary;
+        line-height: 1.9;
+
+        @include xsmall {
+          line-height: 1.2;
+        }
+      }
+
+      .tagline-icon {
+        font-size: 20px;
+        color: $color-accent;
+        margin-top: 4px;
+
+       
+      }
     }
 
-    .tagline-icon {
-      font-size: 20px;
-      color: $color-accent;
-      margin-top: 4px;
-    }
+
+
+
   }
-}
 
 
 
