@@ -207,8 +207,79 @@
                     text-align: center;
                 }
             }
+
+            .menu-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+
+                @include small {
+                    flex-direction: row;
+                    align-items: flex-end; // Aligns button and quantity to bottom
+                    gap: 1rem; // Optional: give a bit more space on larger screens
+                }
+
+
+            }
         }
 
+        .quantity-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+
+            label {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: $color-text;
+            }
+
+            .qty-control {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+
+                input.order-qty {
+                    width: 30px;
+                    padding: 0.4rem;
+                    text-align: center;
+                    font-size: 0.9rem;
+                    border: 1px solid $color-border;
+                    border-radius: 6px;
+                    background: #fff;
+                    -moz-appearance: textfield;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                }
+
+                .qty-btn {
+                    width: 32px;
+                    height: 32px;
+                    display: flex; // ✅ Add this
+                    align-items: center; // ✅ Center vertically
+                    justify-content: center; // ✅ Center horizontally
+                    border: none;
+                    border-radius: 6px;
+                    background-color: $color-accent;
+                    color: #fff;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: background 0.3s ease;
+
+                    &:hover {
+                        background-color: darken($color-accent, 8%);
+                    }
+                }
+
+            }
+        }
 
     }
 
