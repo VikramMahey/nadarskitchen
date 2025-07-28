@@ -203,24 +203,62 @@
   }
 
   // Toggle Button
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  // .nav-toggle {
+  //   display: none;
+  //   flex-direction: column;
+  //   gap: 4px;
+  //   background: none;
+  //   border: none;
+  //   cursor: pointer;
 
-    .hamburger {
-      width: 24px;
-      height: 3px;
-      background-color: $color-text;
+  //   .hamburger {
+  //     width: 24px;
+  //     height: 3px;
+  //     background-color: $color-text;
+  //   }
+
+  //   @include medium {
+  //     display: flex;
+  //   }
+  // }
+
+  .nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+
+  .hamburger {
+    width: 24px;
+    height: 3px;
+    background-color: $color-text;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.open {
+    .hamburger:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
-    @include medium {
-      display: flex;
+    .hamburger:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
+
+  @include medium {
+    display: flex;
+  }
+}
+
 
   .mobile-tagline {
     display: none;
