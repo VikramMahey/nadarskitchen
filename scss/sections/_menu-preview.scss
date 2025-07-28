@@ -31,7 +31,7 @@
 
 
         @include medium {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
         @include small {
@@ -88,6 +88,11 @@
             padding: 0 0.5rem;
         }
 
+        @include medium-up {
+
+            width: 325px;
+        }
+
         // Responsiveness
         @include medium {
             width: 180px;
@@ -98,6 +103,10 @@
             }
         }
 
+
+
+
+
         @include small {
             width: 90%;
             height: 100%;
@@ -105,7 +114,7 @@
             margin: 0 auto 30px;
 
             .image-wrapper {
-                height:100%;
+                height: 100%;
             }
         }
 
@@ -126,6 +135,89 @@
             box-shadow: 0 2px 6px $color-shadow;
             z-index: 2;
         }
+
+
+        .dish-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: lighten($color-accent, 15%);
+            color: $color-text-white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-weight: 600;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+
+     
+
+
+
+        .menu-content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.75rem 1rem 0;
+  text-align: left;
+  gap: 1rem;
+
+  @include small {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .menu-info {
+    flex: 1;
+
+    .menu-name {
+      margin: 0;
+      font-size: 1.05rem;
+      color: $color-text;
+      font-weight: 600;
+      padding-left:0;
+    }
+
+    .menu-description {
+      font-size: 0.85rem;
+      color: $color-text-light;
+      margin: 0.4rem 0;
+      line-height: 1.3;
+    }
+
+    .dish-rating {
+      font-size: 0.8rem;
+      color: $color-accent;
+      font-weight: bold;
+    }
+  }
+
+  .order-button {
+    white-space: nowrap;
+    padding: 0.5rem 1.1rem;
+    background-color: $color-accent;
+    color: $color-text-white;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    height: fit-content;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($color-accent, 10%);
+    }
+
+    @include small {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
 
     }
 
