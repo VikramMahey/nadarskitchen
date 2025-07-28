@@ -33,6 +33,22 @@ position: relative;
   .hero-text {
     flex: 1;
 
+.hero-eyebrow {
+  display: inline-block;
+  background-color: $color-accent; // or a soft brand variant
+  color: $color-text-white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 999px; // pill shape
+  margin-bottom: 16px;
+
+  @include small {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+}
+
     .heading-primary {
       span{
        color: $color-accent;
@@ -41,6 +57,7 @@ position: relative;
       font-weight: 700;
       color: #000;
       margin-bottom: 24px;
+      
     }
 
     .hero-description {
