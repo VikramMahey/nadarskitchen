@@ -514,7 +514,7 @@
   .menu-preview .menu-item {
     width: 90%;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto 30px;
   }
   .menu-preview .menu-item .image-wrapper {
     height: 100%;
