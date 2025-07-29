@@ -259,28 +259,59 @@
                 }
 
                 .qty-btn {
-                    width: 32px;
-                    height: 32px;
-                    display: flex; // ✅ Add this
-                    align-items: center; // ✅ Center vertically
-                    justify-content: center; // ✅ Center horizontally
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    border-radius: 50%;
+                    background-color: $color-accent; // your accent color variable
+                    color: white;
                     border: none;
-                    border-radius: 6px;
-                    background-color: $color-accent;
-                    color: #fff;
-                    font-size: 1.2rem;
-                    font-weight: bold;
+                    font-size: 1.25rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     cursor: pointer;
-                    transition: background 0.3s ease;
+                    transition: background-color 0.3s ease;
 
                     &:hover {
-                        background-color: darken($color-accent, 8%);
+                        background-color: darken($color-accent, 5%);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
                     }
                 }
+
 
             }
         }
 
     }
+
+    .view-full-menu-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.view-full-menu-btn {
+  background-color: $color-accent;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: darken($color-accent, 5%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
 
 }
