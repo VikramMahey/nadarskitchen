@@ -444,6 +444,7 @@
 .menu-preview {
   background: #ffffff;
   padding: 4rem 0;
+  background: linear-gradient(to bottom, #fff3b0, #D92C54);
 }
 .menu-preview .section-title {
   position: relative;
