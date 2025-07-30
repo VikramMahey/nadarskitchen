@@ -1,5 +1,11 @@
 .site-header {
   background-color: $color-bg;
+//  background: linear-gradient(
+//     to right,
+//     lighten($color-secondary, 5%) 0%,
+//     $color-secondary 60%,
+//     darken($color-secondary, 10%) 100%
+//   );
   color: $color-text;
   padding: 8px 0;
   position: sticky;
@@ -58,6 +64,7 @@
       li {
         display: flex;
         align-items: center;
+         ;
 
         a {
           display: inline-block;
@@ -67,6 +74,7 @@
           text-decoration: none;
           position: relative;
           transition: color 0.3s ease;
+          // color:#fff;
 
           &:after {
             content: '';

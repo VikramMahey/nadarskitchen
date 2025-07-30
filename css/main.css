@@ -714,6 +714,63 @@
   transform: scale(0.98);
 }
 
+.how-it-works {
+  background: #ffffff;
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #ffe5cc;
+}
+.how-it-works .section-title {
+  font-size: 2.5rem;
+  color: #fb5607;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+.how-it-works .steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  -moz-column-gap: 6rem;
+       column-gap: 6rem;
+  row-gap: 5rem;
+}
+@media (max-width: 768px) {
+  .how-it-works .steps {
+    row-gap: 10px;
+  }
+}
+.how-it-works .step {
+  flex: 1 1 30%;
+  max-width: 340px;
+}
+.how-it-works .step .step-icon {
+  font-size: 4.5rem;
+  color: #D92C54;
+  margin-bottom: 1.5rem;
+}
+.how-it-works .step h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #D92C54;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.how-it-works .step p {
+  font-size: 1rem;
+  color: #5f6368;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .how-it-works .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-it-works .step {
+    max-width: 100%;
+  }
+}
+
 .btn {
   display: inline-block;
   font-size: 16px;
