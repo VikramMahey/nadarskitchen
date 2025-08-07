@@ -2,7 +2,7 @@
     position: relative;
     padding: $section-padding;
     overflow: hidden;
-    min-height: 300px; // or any height suitable for your section
+    // min-height: 250px; // or any height suitable for your section
 
     .emoji-bg {
         position: absolute;
@@ -93,7 +93,6 @@
     .cta-container {
         position: relative;
         z-index: 1;
-
         display: flex; // ✅ Add Flexbox layout
         justify-content: space-between;
         align-items: center;

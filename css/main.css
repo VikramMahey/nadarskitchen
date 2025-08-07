@@ -846,7 +846,6 @@
   position: relative;
   padding: 4rem 0;
   overflow: hidden;
-  min-height: 300px;
 }
 .cta-banner .emoji-bg {
   position: absolute;
