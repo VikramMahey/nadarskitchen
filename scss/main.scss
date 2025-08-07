@@ -8,6 +8,7 @@
 @import "sections/menu-preview";
 @import "sections/three-icons-content";
 @import "sections/testimonial";
+@import "sections/cta";
 // @import "global/footer";
 
 @import "components/buttons";
@@ -48,7 +49,12 @@ section {
 }
 
 // 3️⃣ Headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   margin: 0 0 16px;
   line-height: 1.2;
@@ -65,12 +71,15 @@ h1 {
   @include large {
     font-size: 40px;
   }
+
   @include medium {
     font-size: 32px;
   }
+
   @include small {
     font-size: 28px;
   }
+
   // @include xsmall {
   //   font-size: 18px;
   // }
@@ -83,12 +92,15 @@ h2 {
   @include large {
     font-size: 35px;
   }
+
   @include medium {
     font-size: 30px;
   }
+
   @include small {
     font-size: 26px;
   }
+
   @include xsmall {
     font-size: 16px;
   }
@@ -101,13 +113,16 @@ h3 {
   @include large {
     font-size: 28px;
   }
+
   @include medium {
     font-size: 24px;
   }
+
   @include small {
     font-size: 22px;
   }
-   @include xsmall {
+
+  @include xsmall {
     font-size: 11px;
   }
 }
@@ -118,9 +133,11 @@ h4 {
   @include large {
     font-size: 24px;
   }
+
   @include medium {
     font-size: 22px;
   }
+
   @include small {
     font-size: 20px;
   }
@@ -166,7 +183,8 @@ a {
 }
 
 // 6️⃣ Lists
-ul, ol {
+ul,
+ol {
   margin: 0 0 16px 24px;
   padding: 0;
   line-height: 1.6;

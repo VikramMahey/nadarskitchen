@@ -1,12 +1,11 @@
 .testimonials {
   position: relative;
   padding: $section-padding;
- background: linear-gradient(
-  to left,
-    rgba(42, 208, 150, 0.465),
-  rgba(42, 208, 150, 0.15),
-  rgba(42, 208, 150, 0.465),
-);
+  background: linear-gradient(to left,
+      rgba(42, 208, 150, 0.465),
+      rgba(42, 208, 150, 0.15),
+      rgba(42, 208, 150, 0.465),
+    );
   text-align: center;
   overflow: hidden; // to contain the overlay
 
