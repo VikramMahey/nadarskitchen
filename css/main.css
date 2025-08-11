@@ -1024,12 +1024,14 @@
   margin-bottom: 0.5rem;
   color: #fb5607;
   font-family: "Helvetica Neue", sans-serif;
+  font-size: 2rem;
 }
 .gallery .section-subheading {
   text-align: center;
   margin-bottom: 2rem;
   color: #5f6368;
   font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
 }
 .gallery .gallery-grid {
   display: grid;
