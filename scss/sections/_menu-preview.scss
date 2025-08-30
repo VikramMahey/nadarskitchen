@@ -13,35 +13,24 @@
     }
 
     .menu-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2rem;
+        // display: grid;
+        // grid-template-columns: repeat(5, 1fr);
+        // gap: 2rem;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        // // justify-content: flex-start;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 2rem; // consistent spacing
+        justify-content: space-between; // no extra stretching
 
 
-        @include medium {
-            grid-template-columns: repeat(4, 1fr);
-        }
 
-        @include small {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include xsmall {
-            grid-template-columns: 1fr;
-        }
-
-        //         .menu-loading {
-        //   text-align: center;
-        //   font-size: 1.25rem;
-        //   color: #555;
-        //   padding: 2rem;
-        // }
-
-        .menu-day-wrapper {
-            margin-bottom: 2rem;
+        .menu-item-wrapper {
+            display: flex;
+            flex-direction: column; // stack day and card vertically
+            align-items: flex-start; // keep the day aligned left
 
         }
 
@@ -51,6 +40,9 @@
             font-weight: bold;
             color: lighten($color-accent, 5%);
 
+            @include medium {
+                margin-left: 20px;
+            }
 
         }
 
@@ -73,8 +65,10 @@
         margin-bottom: 35px;
         min-height: 480px;
 
+
         @include medium {
-            min-height: auto;
+
+            width: 310px;
         }
 
         &:hover {
@@ -108,23 +102,13 @@
         }
 
         @include medium-up {
-
             width: 325px;
         }
 
         // Responsiveness
         @include medium {
-            width: 180px;
             height: 240px;
-
-            .image-wrapper {
-                height: 140px;
-            }
         }
-
-
-
-
 
         @include small {
             width: 90%;
