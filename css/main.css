@@ -501,6 +501,11 @@
   margin-bottom: 35px;
   min-height: 480px;
 }
+@media (max-width: 768px) {
+  .menu-preview .menu-item {
+    min-height: auto;
+  }
+}
 .menu-preview .menu-item:hover {
   transform: translateY(-6px);
 }

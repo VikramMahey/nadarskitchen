@@ -42,6 +42,7 @@
 
         .menu-day-wrapper {
             margin-bottom: 2rem;
+
         }
 
         .menu-day {
@@ -49,6 +50,7 @@
             font-size: 25px;
             font-weight: bold;
             color: lighten($color-accent, 5%);
+
 
         }
 
@@ -69,7 +71,14 @@
         flex-direction: column;
         justify-content: flex-start;
         margin-bottom: 35px;
+
+
+
         min-height: 480px;
+
+        @include medium {
+            min-height: auto;
+        }
 
         &:hover {
             transform: translateY(-6px);
