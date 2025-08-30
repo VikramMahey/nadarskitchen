@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSmoothScroll();
   setupTestimonialsCarousel();
   setupWhatsAppOrdering("919815235090");
-  
-// setupMenuRendering(brokenUrl);
+
+  // setupMenuRendering(brokenUrl);
   setupMenuRendering(menuJsonUrl);
-   // ✅ Call it here
+  // ✅ Call it here
   // initHero();
   // initMenu();
   // initContact();

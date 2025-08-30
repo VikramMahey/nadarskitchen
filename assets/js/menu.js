@@ -7,14 +7,57 @@ export function setupMenuRendering(jsonUrl) {
   const menuGrid = document.querySelector(".menu-grid");
 
   // Helper to render menu items
+  //   function renderMenuItems(data) {
+  //     menuGrid.innerHTML = "";
+  //     data.forEach(item => {
+  //       const card = document.createElement("div");
+  //       card.className = "menu-item";
+  //       card.innerHTML = `
+  //         <span class="menu-price" data-base-price="${item.price}">${item.price} £</span>
+  //         <span class="dish-tag">${item.tag}</span>
+  //         <div class="image-wrapper">
+  //           <img src="${item.image_url}" alt="${item.alt_text}" />
+  //         </div>
+
+  //         <div class="menu-content-row">
+  //           <div class="menu-info">
+  //             <h3 class="menu-name">${item.name}</h3>
+  //             <p class="menu-description">${item.description}</p>
+  //             <div class="dish-rating">${item.rating}</div>
+  //           </div>
+
+  //           <div class="menu-actions">
+  //             <div class="quantity-wrapper">
+  //               <label>Select Quantity</label>
+  //               <div class="qty-control">
+  //                 <button class="qty-btn minus">–</button>
+  //                 <input type="number" class="order-qty" min="1" value="1" />
+  //                 <button class="qty-btn plus">+</button>
+  //               </div>
+  //             </div>
+  //             <button class="order-button">Order Now</button>
+  //           </div>
+  //         </div>
+  //       `;
+  //       menuGrid.appendChild(card);
+  //     });
+
+  //     setupQuantityControls();
+  // setupWhatsAppOrdering("919815235090");
+  //   }
+
   function renderMenuItems(data) {
     menuGrid.innerHTML = "";
+
     data.forEach(item => {
       const card = document.createElement("div");
-      card.className = "menu-item";
+      card.className = "menu-card-wrapper";
+
       card.innerHTML = `
+      <h2 class="menu-day">${item.day}</h2>
+      <div class="menu-item">
         <span class="menu-price" data-base-price="${item.price}">${item.price} £</span>
-        <span class="dish-tag">${item.tag}</span>
+        <span class="dish-tag">${item.tag || ""}</span>
         <div class="image-wrapper">
           <img src="${item.image_url}" alt="${item.alt_text}" />
         </div>
@@ -23,7 +66,7 @@ export function setupMenuRendering(jsonUrl) {
           <div class="menu-info">
             <h3 class="menu-name">${item.name}</h3>
             <p class="menu-description">${item.description}</p>
-            <div class="dish-rating">${item.rating}</div>
+            <div class="dish-rating">${item.rating || ""}</div>
           </div>
 
           <div class="menu-actions">
@@ -38,13 +81,16 @@ export function setupMenuRendering(jsonUrl) {
             <button class="order-button">Order Now</button>
           </div>
         </div>
-      `;
+      </div>
+    `;
+
       menuGrid.appendChild(card);
     });
 
     setupQuantityControls();
-setupWhatsAppOrdering("919815235090");
+    setupWhatsAppOrdering("919815235090");
   }
+
 
   // Load cached data immediately (if available)
   const cachedData = localStorage.getItem("cachedMenu");
@@ -70,11 +116,11 @@ setupWhatsAppOrdering("919815235090");
     //   }
     // });
 
-.catch(err => {
-  console.error("Error loading menu:", err);
+    .catch(err => {
+      console.error("Error loading menu:", err);
 
-  if (!cachedData) {
-    menuGrid.innerHTML = `
+      if (!cachedData) {
+        menuGrid.innerHTML = `
             <div class="menu-item">
           <span class="menu-price" data-base-price="20">20 £</span>
           <span class="dish-tag">Spicy</span>
@@ -108,10 +154,10 @@ setupWhatsAppOrdering("919815235090");
         </div>
     `;
 
-    setupQuantityControls();
-    setupWhatsAppOrdering("919815235090");
-  }
-});
+        setupQuantityControls();
+        setupWhatsAppOrdering("919815235090");
+      }
+    });
 
 
 
