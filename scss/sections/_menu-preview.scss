@@ -27,12 +27,98 @@
 
 
 
+        // .menu-item-wrapper {
+        //     display: flex;
+        //     flex-direction: column; // stack day and card vertically
+        //     align-items: flex-start; // keep the day aligned left
+
+        //     &.highlight {
+        //         @keyframes pulseGlow {
+        //             0% {
+        //                 box-shadow: 0 0 10px rgba($color-accent, 0.6);
+        //             }
+
+        //             50% {
+        //                 box-shadow: 0 0 25px rgba($color-accent, 0.9);
+        //             }
+
+        //             100% {
+        //                 box-shadow: 0 0 10px rgba($color-accent, 0.6);
+        //             }
+        //         }
+
+        //         .menu-item {
+        //             animation: pulseGlow 2s infinite;
+        //             // border: 1px solid $color-accent;
+        //         }
+
+        //     }
+
+
+        // }
+
         .menu-item-wrapper {
             display: flex;
             flex-direction: column; // stack day and card vertically
             align-items: flex-start; // keep the day aligned left
 
+            &.highlight {
+                @keyframes pulseGlow {
+                    0% {
+                        box-shadow: 0 0 10px rgba($color-accent, 0.6);
+                    }
+
+                    50% {
+                        box-shadow: 0 0 25px rgba($color-accent, 0.9);
+                    }
+
+                    100% {
+                        box-shadow: 0 0 10px rgba($color-accent, 0.6);
+                    }
+                }
+
+                .menu-item {
+                    animation: pulseGlow 2s infinite;
+                    // border: 1px solid $color-accent;
+                }
+            }
+
+            // 👇 Disabled style for non-highlighted cards
+            &:not(.highlight) {
+                .menu-item {
+                    filter: grayscale(100%) brightness(0.8);
+                    opacity: 0.6;
+                    pointer-events: none; // prevent interaction
+                    position: relative;
+                }
+
+                // .menu-actions {
+                //     display: none; // hide "Order Now" + quantity
+                // }
+
+                // Optional overlay text
+                .menu-item::after {
+                    content: attr(data-wait-text); // 👈 pulls from the data attribute
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.7);
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 0.5rem 1rem;
+                    border-radius: 0.75rem;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+
+                .menu-special-row {
+                    display: none;
+                }
+            }
         }
+
 
         .menu-day {
             margin: 0 0 0.75rem 0;
@@ -63,7 +149,7 @@
         flex-direction: column;
         justify-content: flex-start;
         margin-bottom: 35px;
-        min-height: 480px;
+        min-height: 534px;
 
 
         @include medium {
@@ -235,6 +321,18 @@
                 }
 
 
+            }
+        }
+
+
+        .menu-special-row {
+            padding: 0.75rem 1rem 0;
+
+            .menu-special {
+                span {
+                    color: $color-accent;
+                    font-weight: 500;
+                }
             }
         }
 
