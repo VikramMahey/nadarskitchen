@@ -184,7 +184,12 @@ export function setupMenuRendering(jsonUrl) {
     const today = new Date().toLocaleString("en-US", { weekday: "long" });
 
     // Step 1: check if any day is explicitly "available"
-    const overrideDay = data.find(item => item.status && item.status.toLowerCase() === "available")?.day;
+    // const overrideDay = data.find(item => item.status && item.status.toLowerCase() === "available")?.day;
+
+    const availableDays = data
+      .filter(item => item.status && item.status.toLowerCase() === "available")
+      .map(item => item.day);
+
 
     data.forEach(item => {
       const card = document.createElement("div");
@@ -192,10 +197,20 @@ export function setupMenuRendering(jsonUrl) {
 
       let shouldHighlight = false;
 
-      if (overrideDay) {
-        shouldHighlight = (item.day === overrideDay);
-      } else if (item.day === today) {
+      // if (overrideDay) {
+      //   shouldHighlight = (item.day === overrideDay);
+      // } else if (item.day === today) {
+      //   shouldHighlight = !(item.status && item.status.toLowerCase() === "not available");
+      // }
+
+      // Case 1: Today’s card → highlight unless "not available"
+      if (item.day === today) {
         shouldHighlight = !(item.status && item.status.toLowerCase() === "not available");
+      }
+
+      // Case 2: If sheet marks this day as available → highlight too
+      if (availableDays.includes(item.day)) {
+        shouldHighlight = true;
       }
 
       if (shouldHighlight) {
