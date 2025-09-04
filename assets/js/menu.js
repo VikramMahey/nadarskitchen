@@ -192,6 +192,11 @@ export function setupMenuRendering(jsonUrl) {
 
 
     data.forEach(item => {
+
+      if (!item.day && !item.daal && !item.sabji && !item.price) {
+        return;
+      }
+
       const card = document.createElement("div");
       card.className = "menu-item-wrapper";
 
