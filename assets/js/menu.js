@@ -6,168 +6,6 @@ import { setupWhatsAppOrdering } from "./order.js";
 export function setupMenuRendering(jsonUrl) {
   const menuGrid = document.querySelector(".menu-grid");
 
-  // Helper to render menu items
-  // function renderMenuItems(data) {
-  //   menuGrid.innerHTML = "";
-  //   data.forEach(item => {
-  //     const card = document.createElement("div");
-  //     card.className = "menu-item-wrapper";
-  //     card.innerHTML = `
-  //       <span class="menu-price" data-base-price="${item.price}">${item.price} £</span>
-  //       <span class="dish-tag">${item.tag}</span>
-  //       <div class="image-wrapper">
-  //         <img src="${item.image_url}" alt="${item.alt_text}" />
-  //       </div>
-
-  //       <div class="menu-content-row">
-  //         <div class="menu-info">
-  //           <h3 class="menu-name">${item.name}</h3>
-  //           <p class="menu-description">${item.description}</p>
-  //           <div class="dish-rating">${item.rating}</div>
-  //         </div>
-
-  //         <div class="menu-actions">
-  //           <div class="quantity-wrapper">
-  //             <label>Select Quantity</label>
-  //             <div class="qty-control">
-  //               <button class="qty-btn minus">–</button>
-  //               <input type="number" class="order-qty" min="1" value="1" />
-  //               <button class="qty-btn plus">+</button>
-  //             </div>
-  //           </div>
-  //           <button class="order-button">Order Now</button>
-  //         </div>
-  //       </div>
-  //     `;
-  //     menuGrid.appendChild(card);
-  //   });
-
-  //   setupQuantityControls();
-  //   setupWhatsAppOrdering("919815235090");
-  // }
-
-  // function renderMenuItems(data) {
-  //   menuGrid.innerHTML = "";
-
-  //   data.forEach(item => {
-  //     const wrapper = document.createElement("div");
-  //     wrapper.className = "menu-item-wrapper";
-
-  //     // Day heading
-  //     const dayHeading = document.createElement("h4");
-  //     dayHeading.className = "menu-day";
-  //     dayHeading.textContent = item.day || ""; // fallback if no day
-  //     wrapper.appendChild(dayHeading);
-
-  //     // Menu item card
-  //     const card = document.createElement("div");
-  //     card.className = "menu-item";
-  //     card.innerHTML = `
-  //     <span class="menu-price" data-base-price="${item.price}">${item.price} £</span>
-  //     <span class="dish-tag">${item.tag}</span>
-  //     <div class="image-wrapper">
-  //       <img src="${item.image_url}" alt="${item.alt_text}" />
-  //     </div>
-
-  //     <div class="menu-content-row">
-  //       <div class="menu-info">
-  //         <h3 class="menu-name">${item.name}</h3>
-  //         <p class="menu-description">${item.description}</p>
-  //         <div class="dish-rating">${item.rating}</div>
-  //       </div>
-
-  //       <div class="menu-actions">
-  //         <div class="quantity-wrapper">
-  //           <label>Select Quantity</label>
-  //           <div class="qty-control">
-  //             <button class="qty-btn minus">–</button>
-  //             <input type="number" class="order-qty" min="1" value="1" />
-  //             <button class="qty-btn plus">+</button>
-  //           </div>
-  //         </div>
-  //         <button class="order-button">Order Now</button>
-  //       </div>
-  //     </div>
-  //   `;
-
-  //     // Append card inside wrapper
-  //     wrapper.appendChild(card);
-
-  //     // Add wrapper to grid
-  //     menuGrid.appendChild(wrapper);
-  //   });
-
-  //   setupQuantityControls();
-  //   setupWhatsAppOrdering("919815235090");
-  // }
-
-  // function renderMenuItems(data) {
-  //   menuGrid.innerHTML = "";
-
-  //   const today = new Date().toLocaleString("en-US", { weekday: "long" });
-
-  //   // Step 1: check if any day is explicitly "available"
-  //   const overrideDay = data.find(item => item.status && item.status.toLowerCase() === "available")?.day;
-
-  //   data.forEach(item => {
-  //     const card = document.createElement("div");
-  //     card.className = "menu-item-wrapper";
-
-  //     let shouldHighlight = false;
-
-  //     if (overrideDay) {
-  //       // If override exists → highlight that day only
-  //       shouldHighlight = (item.day === overrideDay);
-  //     } else if (item.day === today) {
-  //       // Otherwise, highlight today unless it's "not available"
-  //       shouldHighlight = !(item.status && item.status.toLowerCase() === "not available");
-  //     }
-
-  //     if (shouldHighlight) {
-  //       card.classList.add("highlight");
-  //     }
-
-  //     card.innerHTML = `
-  //     <h4 class="menu-day">${item.day}</h4>
-  //     <div class="menu-item">
-  //       <span class="menu-price" data-base-price="${item.price}">${item.price} £</span>
-  //       <span class="dish-tag">${item.tag}</span>
-  //       <div class="image-wrapper">
-  //         <img src="${item.image_url}" alt="${item.alt_text}" />
-  //       </div>
-  //       <div class="menu-content-row">
-  //         <div class="menu-info">
-  //           <h3 class="menu-name">${item.name}</h3>
-  //           <p class="menu-description">${item.description}</p>
-  //           <div class="dish-rating">${item.rating}</div>
-  //         </div>
-  //         <div class="menu-actions">
-  //           <div class="quantity-wrapper">
-  //             <label>Select Quantity</label>
-  //             <div class="qty-control">
-  //               <button class="qty-btn minus">–</button>
-  //               <input type="number" class="order-qty" min="1" value="1" />
-  //               <button class="qty-btn plus">+</button>
-  //             </div>
-  //           </div>
-  //           <button class="order-button">Order Now</button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   `;
-
-  //     if (!shouldHighlight) {
-  //       const menuItem = card.querySelector(".menu-item");
-  //       menuItem.setAttribute("data-wait-text", `⏳ Wait for ${item.day}`);
-  //     }
-
-  //     menuGrid.appendChild(card);
-  //   });
-
-  //   setupQuantityControls();
-  //   setupWhatsAppOrdering("919815235090");
-  // }
-
   function toSentenceCase(str) {
     if (!str) return "";
     return str
@@ -182,9 +20,6 @@ export function setupMenuRendering(jsonUrl) {
     menuGrid.innerHTML = "";
 
     const today = new Date().toLocaleString("en-US", { weekday: "long" });
-
-    // Step 1: check if any day is explicitly "available"
-    // const overrideDay = data.find(item => item.status && item.status.toLowerCase() === "available")?.day;
 
     const availableDays = data
       .filter(item => item.status && item.status.toLowerCase() === "available")
@@ -202,12 +37,6 @@ export function setupMenuRendering(jsonUrl) {
 
       let shouldHighlight = false;
 
-      // if (overrideDay) {
-      //   shouldHighlight = (item.day === overrideDay);
-      // } else if (item.day === today) {
-      //   shouldHighlight = !(item.status && item.status.toLowerCase() === "not available");
-      // }
-
       // Case 1: Today’s card → highlight unless "not available"
       if (item.day === today) {
         shouldHighlight = !(item.status && item.status.toLowerCase() === "not available");
@@ -222,12 +51,8 @@ export function setupMenuRendering(jsonUrl) {
         card.classList.add("highlight");
       }
 
-
       // Title → Daal + Sabji, both sentence case
       const combinedTitle = `${toSentenceCase(item.daal)} and  ${toSentenceCase(item.sabji)}`;
-
-      // 👉 Title: combine daal + sabji
-      // const combinedTitle = [item.daal, item.sabji].filter(Boolean).join(" ");
 
       // 👉 Dynamic snacks/dessert text
       let specialLine = "";

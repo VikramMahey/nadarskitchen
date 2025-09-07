@@ -1,11 +1,11 @@
 .site-header {
   background-color: $color-bg;
-// background: linear-gradient(
-//   to right,
-//   #a8fbd2,
-//   #00f5d4
-  
-// );
+  // background: linear-gradient(
+  //   to right,
+  //   #a8fbd2,
+  //   #00f5d4
+
+  // );
 
 
   color: $color-text;
@@ -66,7 +66,7 @@
       li {
         display: flex;
         align-items: center;
-         ;
+        ;
 
         a {
           display: inline-block;
@@ -233,41 +233,41 @@
   // }
 
   .nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1100;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
 
-  .hamburger {
-    width: 24px;
-    height: 3px;
-    background-color: $color-text;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform-origin: center;
-  }
-
-  &.open {
-    .hamburger:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    .hamburger {
+      width: 24px;
+      height: 3px;
+      background-color: $color-text;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
     }
 
-    .hamburger:nth-child(2) {
-      opacity: 0;
+    &.open {
+      .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
     }
 
-    .hamburger:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    @include medium {
+      display: flex;
     }
   }
-
-  @include medium {
-    display: flex;
-  }
-}
 
 
   .mobile-tagline {
@@ -280,7 +280,7 @@
       justify-content: center;
       margin-left: 12px;
       margin-right: auto;
-    
+
 
       .tagline-text {
         font-family: 'Dancing Script', cursive;
@@ -298,7 +298,7 @@
         color: $color-accent;
         margin-top: 4px;
 
-       
+
       }
     }
 
