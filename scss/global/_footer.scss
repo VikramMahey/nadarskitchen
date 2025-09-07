@@ -46,7 +46,7 @@
       .links-wrapper {
         display: grid;
         grid-template-columns: repeat(3, auto);
-        gap: 0.75rem 5rem; // reduced gap
+        gap: 0.75rem 4rem; // reduced gap
         justify-content: start; // ✅ align columns left inside parent
       }
 

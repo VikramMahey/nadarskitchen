@@ -1278,7 +1278,7 @@
 .footer .footer-grid .footer-links .links-wrapper {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 0.75rem 5rem;
+  gap: 0.75rem 4rem;
   justify-content: start;
 }
 .footer .footer-grid .footer-links ul {
