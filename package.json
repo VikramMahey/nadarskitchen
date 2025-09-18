@@ -6,7 +6,7 @@
     "clean": "rimraf dist",
     "build:bundle": "esbuild assets/js/main.js --bundle --target=es2018 --format=esm --outfile=dist/main.bundle.js",
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
-    "build:css": "postcss css/main.css",
+    "build:css": "postcss css/main.css --output dist/main.min.css",
     "build": "npm run clean && npm run build:bundle",
     "build:all": "npm run build:css && npm run build"
   },
