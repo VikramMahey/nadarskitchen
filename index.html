@@ -30,7 +30,7 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/main.final.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -398,30 +398,18 @@
   <!-- ✅ Correct way to load your entry script -->
   <!-- <script type="module" src="assets/js/main.js"></script> -->
 
+
+
   <script type="module">
     const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
-
-    function loadScriptAndCss(jsPath, cssPath) {
-      if (cssPath) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = cssPath;
-        document.head.appendChild(link);
-      }
-
-      if (jsPath) {
-        import(jsPath)
-          .then(() => console.log(`✅ Loaded ${jsPath}`))
-          .catch(err => console.error(`❌ Failed to load ${jsPath}`, err));
-      }
-    }
-
     if (isLocal) {
-      loadScriptAndCss("./assets/js/main.js", "./css/main.css");
+      import("./assets/js/main.js");
     } else {
-      loadScriptAndCss("./dist/main.final.js", "/css/main.final.css");
+      import("./dist/main.final.js");
     }
   </script>
+
+
 
 
 
