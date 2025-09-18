@@ -8,7 +8,7 @@
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
     "build:css": "sass css/main.css css/main.css --style=compressed",
     "build": "npm run clean && npm run build:bundle && npm run build:obf",
-    "dev": "npm run dev:css && echo 'Dev mode: using assets/js/main.js directly'"
+    "build:all": "npm run build:css && npm run build"
   },
   "devDependencies": {
     "esbuild": "^0.18.20",
