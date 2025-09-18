@@ -409,6 +409,11 @@
       import("./dist/main.final.js")
         .then(() => console.log("✅ Loaded production main.final.js"))
         .catch(err => console.error("❌ Failed to load final bundle", err));
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = './css/main.final.css';
+      document.head.appendChild(link);
     }
   </script>
 

@@ -6,13 +6,16 @@
     "clean": "rimraf dist",
     "build:bundle": "esbuild assets/js/main.js --bundle --target=es2018 --format=esm --outfile=dist/main.bundle.js",
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
-    "build:css": "sass css/main.css css/main.css --style=compressed",
+    "build:css": "sass scss/main.scss css/main.css --style=compressed && postcss css/main.css -o css/main.final.css",
     "build": "npm run clean && npm run build:bundle && npm run build:obf",
     "build:all": "npm run build:css && npm run build"
   },
   "devDependencies": {
     "esbuild": "^0.18.20",
     "javascript-obfuscator": "^4.1.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-modules": "^6.0.1",
     "rimraf": "^5.0.10",
     "sass": "^1.92.1"
   }
