@@ -11,6 +11,7 @@
     "build:all": "npm run build:css && npm run build"
   },
   "devDependencies": {
+    "cssnano": "^7.1.1",
     "esbuild": "^0.18.20",
     "javascript-obfuscator": "^4.1.1",
     "postcss": "^8.5.6",

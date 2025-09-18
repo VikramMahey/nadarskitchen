@@ -399,23 +399,30 @@
   <!-- <script type="module" src="assets/js/main.js"></script> -->
 
   <script type="module">
-    const local = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+    const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
 
-    if (local) {
-      import("./assets/js/main.js")
-        .then(() => console.log("✅ Loaded local main.js"))
-        .catch(err => console.error("❌ Failed to load local main.js", err));
+    function loadScriptAndCss(jsPath, cssPath) {
+      if (cssPath) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = cssPath;
+        document.head.appendChild(link);
+      }
+
+      if (jsPath) {
+        import(jsPath)
+          .then(() => console.log(`✅ Loaded ${jsPath}`))
+          .catch(err => console.error(`❌ Failed to load ${jsPath}`, err));
+      }
+    }
+
+    if (isLocal) {
+      loadScriptAndCss("./assets/js/main.js", "./css/main.css");
     } else {
-      import("./dist/main.final.js")
-        .then(() => console.log("✅ Loaded production main.final.js"))
-        .catch(err => console.error("❌ Failed to load final bundle", err));
-
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = './css/main.final.css';
-      document.head.appendChild(link);
+      loadScriptAndCss("./dist/main.final.js", "/css/main.final.css");
     }
   </script>
+
 
 
 
