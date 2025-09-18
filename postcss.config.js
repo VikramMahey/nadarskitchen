@@ -1,20 +1,12 @@
-module.exports = {
-    plugins: [
-        require('cssnano')({
-            preset: 'default',
-        }),
-    ],
-};
-
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     plugins: [
+        require('cssnano')({ preset: 'default' }), // minify CSS
         require('postcss-modules')({
-            generateScopedName: '[hash:base64:6]', // short, unreadable class names
+            generateScopedName: name => name, // keep original class names
             getJSON: function (cssFileName, json, outputFileName) {
-                // Save mapping to a JSON file to replace class names in HTML/JS if needed
-                const fs = require('fs');
-                const path = require('path');
                 const jsonPath = path.resolve('./css/class-names.json');
                 fs.writeFileSync(jsonPath, JSON.stringify(json));
             }

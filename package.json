@@ -7,9 +7,8 @@
     "build:bundle": "esbuild assets/js/main.js --bundle --target=es2018 --format=esm --outfile=dist/main.bundle.js",
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
     "build:css": "postcss css/main.css -o css/main.final.css --map",
-    "build": "npm run clean && npm run build:bundle && npm run build:obf && npm run build:css && npm run replace:css",
-    "build:all": "npm run build:css && npm run build",
-    "replace:css": "replace-in-file 'css/main.css' 'css/main.final.css' index.html"
+    "build": "npm run clean && npm run build:bundle && npm run build:obf",
+    "build:all": "npm run build:css && npm run build"
   },
   "devDependencies": {
     "cssnano": "^7.1.1",
