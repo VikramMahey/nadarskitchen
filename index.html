@@ -25,74 +25,16 @@
   <meta property="twitter:description"
     content="Delicious, home-cooked food made with love. Order now from The Nadar's Kitchen.">
   <meta property="twitter:image" content="https://nadarskitchen.netlify.app/img/IMG-20250725-WA0000.jpg">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
-<script>
-  tsParticles.load("tsparticles", {
-    fullScreen: {
-      enable: false,
-      zIndex: 0
-    },
-    background: {
-      color: "transparent"
-    },
-    particles: {
-      number: {
-        value: 50
-      },
-      color: {
-        value: "#ffffff"
-      },
-      shape: {
-        type: "circle"
-      },
-      opacity: {
-        value: 0.3
-      },
-      size: {
-        value: 3
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: "none",
-        outModes: "out"
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: "#ffffff",
-        opacity: 0.2,
-        width: 1
-      }
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: "repulse"
-        },
-        onclick: {
-          enable: true,
-          mode: "push"
-        }
-      },
-      modes: {
-        repulse: {
-          distance: 100
-        },
-        push: {
-          quantity: 4
-        }
-      }
-    }
-  });
-</script>
+
 
 <body>
 
@@ -454,7 +396,25 @@
 
   <!-- JavaScript -->
   <!-- ✅ Correct way to load your entry script -->
-  <script type="module" src="assets/js/main.js"></script>
+  <!-- <script type="module" src="assets/js/main.js"></script> -->
+
+  <script type="module">
+    const local = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+    if (local) {
+      import("./assets/js/main.js")
+        .then(() => console.log("✅ Loaded local main.js"))
+        .catch(err => console.error("❌ Failed to load local main.js", err));
+    } else {
+      import("./dist/main.final.js")
+        .then(() => console.log("✅ Loaded production main.final.js"))
+        .catch(err => console.error("❌ Failed to load final bundle", err));
+    }
+  </script>
+
+
+
+  <!-- <script type="module" src="dist/main.final.js" defer></script> -->
 
 </body>
 

@@ -25,6 +25,9 @@
     <meta property="twitter:description"
         content="Delicious, home-cooked food made with love. Order now from The Nadar's Kitchen.">
     <meta property="twitter:image" content="https://nadarskitchen.netlify.app/img/IMG-20250725-WA0000.jpg">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css" />
@@ -182,42 +185,24 @@
         </div>
     </footer>
 
+    <script type="module">
+        const local = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+        if (local) {
+            import("./assets/js/main.js")
+                .then(() => console.log("✅ Loaded local main.js"))
+                .catch(err => console.error("❌ Failed to load local main.js", err));
+        } else {
+            import("./dist/main.final.js")
+                .then(() => console.log("✅ Loaded production main.final.js"))
+                .catch(err => console.error("❌ Failed to load final bundle", err));
+        }
+    </script>
 
 
     <!-- JavaScript -->
     <!-- ✅ Correct way to load your entry script -->
-    <script type="module" src="assets/js/main.js"></script>
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwJUTzbBzHCL-aQJsqXlf24eLEYQ3e3-D8FAy-d2lbHV49eV2rSAC93risNoN7J91okCQ/exec";
-        const form = document.getElementById("ContactForm");
-
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const formData = {
-                name: form.name.value,
-                email: form.email.value,
-                phone: form.phone.value,
-                message: form.message.value,
-            };
-
-            fetch(scriptURL, {
-                method: "POST",
-                mode: "no-cors", // ✅ required
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            })
-                .then(() => {
-                    // We can’t read the response, so just assume success
-                    alert("✅ Thank you! Your message has been sent.");
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error("Error!", error);
-                    alert("❌ Something went wrong.");
-                });
-        });
-    </script>
+    <!-- <script type="module" src="dist/main.final.js" defer></script> -->
 
 </body>
 
