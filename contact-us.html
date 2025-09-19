@@ -185,24 +185,7 @@
         </div>
     </footer>
 
-    <script type="module">
-        const local = location.hostname === "127.0.0.1" || location.hostname === "localhost";
-
-        if (local) {
-            import("./assets/js/main.js")
-                .then(() => console.log("✅ Loaded local main.js"))
-                .catch(err => console.error("❌ Failed to load local main.js", err));
-        } else {
-            import("./dist/main.final.js")
-                .then(() => console.log("✅ Loaded production main.final.js"))
-                .catch(err => console.error("❌ Failed to load final bundle", err));
-        }
-    </script>
-
-
-    <!-- JavaScript -->
-    <!-- ✅ Correct way to load your entry script -->
-    <!-- <script type="module" src="dist/main.final.js" defer></script> -->
+    <script type="module" src="dist/main.final.js"></script>
 
 </body>
 

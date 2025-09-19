@@ -21,7 +21,7 @@ export function setupContactForm() {
             body: JSON.stringify(formData),
         })
             .then(() => {
-                alert("✅ Thank you! Your message has been sent.");
+                alert("✅ Thank you! Your Message has been sent.");
                 form.reset();
             })
             .catch((error) => {

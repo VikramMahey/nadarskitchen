@@ -327,7 +327,7 @@ function setupContactForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     }).then(() => {
-      alert("\u2705 Thank you! Your message has been sent.");
+      alert("\u2705 Thank you! Your Message has been sent.");
       form.reset();
     }).catch((error) => {
       console.error("\u274C Error!", error);
