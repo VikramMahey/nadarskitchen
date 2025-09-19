@@ -402,13 +402,19 @@
 
 
   <script type="module">
-    const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
-    if (isLocal) {
-      import("./assets/js/main.js");
+    const local = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+    if (local) {
+      import("./assets/js/main.js")
+        .then(() => console.log("✅ Loaded local main.js"))
+        .catch(err => console.error("❌ Failed to load local main.js", err));
     } else {
-      import("./dist/main.final.js");
+      import("./dist/main.final.js")
+        .then(() => console.log("✅ Loaded production main.final.js"))
+        .catch(err => console.error("❌ Failed to load final bundle", err));
     }
   </script>
+
 
 
 
