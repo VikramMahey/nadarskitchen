@@ -102,7 +102,7 @@ function setupSmoothScroll() {
           const startY = window.scrollY;
           const elementY = targetElement.getBoundingClientRect().top + startY;
           const offsetY = elementY - headerHeight - buffer;
-          smoothScrollTo(startY, offsetY, 800);
+          smoothScrollTo(startY, offsetY, 700);
           const navToggle = document.getElementById("nav-toggle");
           const nav = document.querySelector(".nav");
           if (navToggle == null ? void 0 : navToggle.classList.contains("open")) {
@@ -112,6 +112,21 @@ function setupSmoothScroll() {
         }
       });
     });
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        const header = document.querySelector(".site-header");
+        const headerHeight = (header == null ? void 0 : header.offsetHeight) || 0;
+        const buffer = 0;
+        window.scrollTo(0, 0);
+        const startY = 0;
+        const elementY = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetY = elementY - headerHeight - buffer;
+        setTimeout(() => {
+          smoothScrollTo(startY, offsetY, 700);
+        }, 100);
+      }
+    }
   });
 }
 function smoothScrollTo(start, end, duration) {
