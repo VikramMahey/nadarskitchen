@@ -1,7 +1,7 @@
 .three-cards {
   padding: $section-padding;
   //   background-color: $color-surface;
-  margin-top: -15rem; // 👈 overlap upward
+  margin-top: -6rem; // 👈 overlap upward
 
   position: relative;
   z-index: 2;
@@ -49,12 +49,13 @@
 
       box-shadow: 0 0 28px rgba(217, 44, 84, 0.18);
 
-transition: box-shadow 0.3s ease, transform 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
 
-  &:hover {
-   box-shadow: 0 0 28px rgba(217, 44, 84, 0.18);
-  transform: translateY(-6px);
-  }
+      &:hover {
+        box-shadow: 0 0 28px rgba(217, 44, 84, 0.18);
+        transform: translateY(-6px);
+      }
+
       img {
         width: 60px;
         height: 60px;
