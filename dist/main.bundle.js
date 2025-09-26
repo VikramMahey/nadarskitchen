@@ -177,10 +177,12 @@ function setupMenuRendering(jsonUrl) {
       const combinedTitle = `${toSentenceCase(item.daal)} and  ${toSentenceCase(item.sabji)}`;
       let specialLine = "";
       const parts = [];
-      if (item.snacks)
+      if (item.snacks && item.snacks.toLowerCase() !== "select snack") {
         parts.push(toSentenceCase(item.snacks));
-      if (item.dessert)
+      }
+      if (item.dessert && item.dessert.toLowerCase() !== "select dessert") {
         parts.push(toSentenceCase(item.dessert));
+      }
       if (parts.length > 0) {
         specialLine += parts.join(" ");
       } else {
@@ -220,6 +222,10 @@ function setupMenuRendering(jsonUrl) {
  
     </div>
 `;
+      if (!specialLine) {
+        const menuItem = card.querySelector(".menu-item");
+        menuItem.style.minHeight = "500px";
+      }
       if (!shouldHighlight) {
         const menuItem = card.querySelector(".menu-item");
         menuItem.setAttribute("data-wait-text", `\u23F3 Wait for ${item.day}`);

@@ -58,8 +58,15 @@ export function setupMenuRendering(jsonUrl) {
       let specialLine = "";
       const parts = [];
 
-      if (item.snacks) parts.push(toSentenceCase(item.snacks));
-      if (item.dessert) parts.push(toSentenceCase(item.dessert));
+      // if (item.snacks) parts.push(toSentenceCase(item.snacks));
+      // if (item.dessert) parts.push(toSentenceCase(item.dessert));
+
+      if (item.snacks && item.snacks.toLowerCase() !== "select snack") {
+        parts.push(toSentenceCase(item.snacks));
+      }
+      if (item.dessert && item.dessert.toLowerCase() !== "select dessert") {
+        parts.push(toSentenceCase(item.dessert));
+      }
 
       if (parts.length > 0) {
         specialLine += parts.join(" ");
@@ -102,6 +109,10 @@ export function setupMenuRendering(jsonUrl) {
     </div>
 `;
 
+      if (!specialLine) {
+        const menuItem = card.querySelector(".menu-item");
+        menuItem.style.minHeight = "500px";
+      }
 
       if (!shouldHighlight) {
         const menuItem = card.querySelector(".menu-item");
