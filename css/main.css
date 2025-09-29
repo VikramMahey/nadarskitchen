@@ -361,6 +361,70 @@
   }
 }
 
+.privacy-policy .page-hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: #f0f3bd;
+}
+.privacy-policy .page-hero .page-title {
+  font-size: 2rem;
+  color: #fb5607;
+  margin-bottom: 0.5rem;
+}
+.privacy-policy .page-hero .page-subtitle {
+  color: #5f6368;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.privacy-policy .policy-content {
+  padding: 4rem 0;
+  background: #ffffff;
+  color: #1b1b1b;
+}
+.privacy-policy .policy-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #fb5607;
+}
+.privacy-policy .policy-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.terms-of-use .page-hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: #f0f3bd;
+}
+.terms-of-use .page-hero .page-title {
+  font-size: 2rem;
+  color: #fb5607;
+  margin-bottom: 0.5rem;
+}
+.terms-of-use .page-hero .page-subtitle {
+  color: #5f6368;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.terms-of-use .terms-content {
+  padding: 4rem 0;
+  background: #ffffff;
+  color: #1b1b1b;
+}
+.terms-of-use .terms-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #fb5607;
+}
+.terms-of-use .terms-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
 .hero-section {
   position: relative;
   z-index: 1;
