@@ -592,6 +592,11 @@
   height: 60px;
   margin-bottom: 1.25rem;
 }
+.three-cards .card-group .card .why-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
 .three-cards .card-group .card h3 {
   font-size: 1.25rem;
   font-weight: 600;
