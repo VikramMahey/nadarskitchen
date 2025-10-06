@@ -7,10 +7,9 @@
     "clean": "rimraf dist",
     "build:bundle": "esbuild assets/js/main.js --bundle --target=es2018 --format=esm --outfile=dist/main.bundle.js",
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
-    "build": "npm run clean && npm run build:bundle && npm run build:obf",
-    "dev": "echo 'Dev mode: using assets/js/main.js directly'",
     "build:sitemap": "node sitemap.js",
-    "build:all": "npm run clean && npm run build:bundle && npm run build:obf && npm run build:css && npm run build:sitemap"
+    "build": "npm run clean && npm run build:bundle && npm run build:obf && npm run build:sitemap",
+    "dev": "echo 'Dev mode: using assets/js/main.js directly'",
   },
   "devDependencies": {
     "esbuild": "^0.18.20",
