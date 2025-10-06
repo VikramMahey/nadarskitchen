@@ -1,4 +1,6 @@
+// sitemap.js
 import fs from "fs";
+import path from "path";
 
 // ✅ Define your URLs here
 const urls = [
@@ -12,6 +14,11 @@ const urls = [
 export function generateSitemap(outputPath = "dist/sitemap.xml") {
     const today = new Date().toISOString().split("T")[0];
 
+    // Ensure the output directory exists
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    // Build XML
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
     xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
@@ -28,4 +35,9 @@ export function generateSitemap(outputPath = "dist/sitemap.xml") {
 
     fs.writeFileSync(outputPath, xml);
     console.log(`✅ Sitemap generated at: ${outputPath}`);
+}
+
+// ✅ If run directly, generate sitemap
+if (process.argv[1].endsWith("sitemap.js")) {
+    generateSitemap();
 }
