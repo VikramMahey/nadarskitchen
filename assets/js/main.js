@@ -5,6 +5,10 @@ import { setupSmoothScroll } from './scroll.js';
 import { setupMenuRendering } from './menu.js';
 import { setupTestimonialsCarousel } from './testimonial.js';
 import { setupContactForm } from './contact.js';
+import { generateSitemap } from "./sitemap.js";
+
+
+
 
 
 const menuJsonUrl = 'https://script.google.com/macros/s/AKfycbyBTQYFNNdKq7QZp54LgpFnOc47CZ4VKqsJZ7rBRKIUx1c0DgwQgbjE9S1WPIkY6xJwuA/exec';
@@ -35,6 +39,8 @@ function initSite() {
   setupWhatsAppOrdering("919815235090");
   setupMenuRendering(menuJsonUrl);
   setupContactForm();
+  // Run the sitemap generator
+  generateSitemap();
 }
 
 if (document.readyState === "loading") {
