@@ -5,7 +5,7 @@ import { setupSmoothScroll } from './scroll.js';
 import { setupMenuRendering } from './menu.js';
 import { setupTestimonialsCarousel } from './testimonial.js';
 import { setupContactForm } from './contact.js';
-import { generateSitemap } from "./sitemap.js";
+
 
 
 
