@@ -38,6 +38,8 @@ export function generateSitemap(outputPath = "dist/sitemap.xml") {
 }
 
 // ✅ If run directly, generate sitemap
+// Change this line
 if (process.argv[1].endsWith("sitemap.js")) {
-    generateSitemap();
+    generateSitemap("sitemap.xml"); // outputs to project root
 }
+
