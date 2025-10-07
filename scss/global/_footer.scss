@@ -1,0 +1,200 @@
+.footer {
+  background: $color-bg; // white background
+  color: $color-text;
+  padding: 3rem 0 1rem;
+  border-top: 1px solid $color-border;
+
+  // .container {
+  //   max-width: 1200px;
+  //   margin: 0 auto;
+  //   padding: 0 1rem;
+  // }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .footer-about {
+      justify-self: start;
+      text-align: left;
+      max-width: 320px; // ✅ limit width so it doesn’t stretch too wide
+
+      .footer-logo img {
+        max-height: 85px;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: $color-text-light;
+      }
+    }
+
+    .footer-links {
+      text-align: left; // ensure left aligned even if centered grid
+
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: $color-accent
+      }
+
+      .links-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 0.75rem 4rem; // reduced gap
+        justify-content: start; // ✅ align columns left inside parent
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.5rem;
+
+          a {
+            color: $color-text;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $color-accent;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-socials {
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; // ✅ heading + icons aligned right together
+      gap: 1rem;
+
+      .socials-wrapper {
+        text-align: left;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: $color-accent
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background: $color-accent;
+          color: $color-text-white;
+          transition: background 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background: $color-secondary;
+            color: $color-text-white;
+            text-decoration: none;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: right;
+    font-size: 0.85rem;
+    color: $color-text-light;
+
+    .credit {
+      a {
+        color: $color-accent; // matches brand accent
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+
+
+
+  }
+
+  // Responsive
+
+  @include medium {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 2rem;
+
+      .footer-about {
+        justify-self: center;
+        text-align: center;
+        max-width: 100%;
+
+        .footer-logo {
+          a {
+            display: inline-block; // makes the anchor wrap its contents cleanly
+          }
+
+          img {
+            max-height: 85px;
+            display: block; // ensures image centers within anchor
+            margin: 15px auto; // ✅ centers image when parent is text-align:center
+          }
+        }
+      }
+
+      .footer-links {
+        text-align: center;
+
+        .links-wrapper {
+          grid-template-columns: 1fr;
+          justify-content: center;
+          gap: 0.75rem 2rem;
+        }
+      }
+
+      .footer-socials {
+        align-items: center;
+
+        .socials-wrapper {
+          text-align: center;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+      }
+    }
+
+    .footer-bottom {
+      text-align: center; // ✅ center align on small screens
+      margin-top: 1rem;
+    }
+  }
+
+}

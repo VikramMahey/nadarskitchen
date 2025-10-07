@@ -1,0 +1,27 @@
+@import "variables";
+
+@mixin xsmall {
+  @media (max-width: $breakpoint-xsmall) { @content; }
+}
+@mixin small {
+  @media (max-width: $breakpoint-small) { @content; }
+}
+@mixin medium {
+  @media (max-width: $breakpoint-medium) { @content; }
+}
+// ✅ New (correct — applies on larger screens)
+@mixin medium-up {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: $breakpoint-large) { @content; }
+}
+@mixin xlarge {
+  @media (max-width: $breakpoint-xlarge) { @content; }
+}
+@mixin xxlarge {
+  @media (max-width: $breakpoint-xxlarge) { @content; }
+}

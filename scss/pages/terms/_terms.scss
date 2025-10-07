@@ -1,0 +1,38 @@
+.terms-of-use {
+    .page-hero {
+        padding: $section-padding;
+        text-align: center;
+        background: $color-surface;
+
+        .page-title {
+            font-size: 2rem;
+            color: $color-heading;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: $color-text-light;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+
+    .terms-content {
+        padding: $section-padding;
+        background: $color-bg;
+        color: $color-text;
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: $color-heading;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+    }
+}
