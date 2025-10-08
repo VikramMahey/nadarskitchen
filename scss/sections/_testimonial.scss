@@ -1,0 +1,91 @@
+.testimonials {
+  position: relative;
+  padding: $section-padding;
+  background: linear-gradient(to left,
+      rgba(42, 208, 150, 0.465),
+      rgba(42, 208, 150, 0.15),
+      rgba(42, 208, 150, 0.465),
+    );
+  text-align: center;
+  overflow: hidden; // to contain the overlay
+
+
+  .section-heading {
+    margin-bottom: 10px;
+
+    h2 {
+      font-size: 2rem;
+      color: darken($color-secondary, 10%); // Deeper raspberry
+      font-weight: 600;
+    }
+
+    p {
+      color: darken($color-secondary, 35%); // Muted raspberry
+      font-size: 1rem;
+    }
+  }
+
+  .testimonial-carousel-wrapper {
+    overflow: hidden;
+    // max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .testimonial-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
+  .testimonial {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: darken($color-secondary, 30%);
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      .name {
+        font-weight: bold;
+        color: $color-primary; // Assuming this contrasts well
+        display: block;
+      }
+
+      .location {
+        font-size: 0.9rem;
+        color: darken($color-secondary, 35%);
+      }
+    }
+  }
+
+  .carousel-dots {
+
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      background-color: darken($color-secondary, 20%);
+      opacity: 0.4;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+
+      &.active {
+        background-color: $color-primary; // Active dot pops with contrast
+        opacity: 1;
+      }
+    }
+  }
+
+  @include medium {
+    .quote {
+      font-size: 1rem;
+    }
+  }
+}

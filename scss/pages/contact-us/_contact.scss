@@ -1,0 +1,132 @@
+.contact-banner {
+    padding: $section-padding;
+    background: linear-gradient(to right,
+            lighten($color-primary, 25%),
+            $color-primary );
+    color: $color-surface;
+    text-align: center;
+
+    .section-heading {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-family: $font-family;
+        color: $color-text-white;
+    }
+
+    .section-subheading {
+        font-size: 1.2rem;
+        color: rgba($color-surface, 0.9);
+        font-family: $font-family;
+    }
+}
+
+.contact-form-section {
+    padding: $section-padding;
+    background-color: $color-surface;
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: $color-bg;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: $color-heading;
+
+                span {
+                    color: $color-primary;
+                }
+            }
+
+            input,
+            textarea {
+                padding: 0.75rem 1rem;
+                border: 1px solid $color-border;
+                border-radius: 0.5rem;
+                font-family: $font-family;
+                font-size: 1rem;
+                color: $color-text;
+                background-color: $color-bg;
+
+                &:focus {
+                    outline: none;
+                    border-color: $color-primary;
+                    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+                }
+            }
+
+            textarea {
+                resize: vertical;
+            }
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: $color-primary;
+            color: $color-surface;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: darken($color-primary, 8%);
+            }
+        }
+    }
+}
+
+.contact-info {
+    padding: $section-padding;
+    background-color: $color-bg;
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+
+        .info-item {
+            h3 {
+                font-size: 1.25rem;
+                color: $color-heading;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: $color-text;
+                line-height: 1.6;
+            }
+
+            a {
+                color: $color-primary;
+                font-weight: 500;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small {
+            grid-template-columns: 1fr;
+        }
+    }
+}
