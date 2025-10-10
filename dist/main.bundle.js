@@ -367,7 +367,6 @@ function initSite() {
   setupWhatsAppOrdering("919815235090");
   setupMenuRendering(menuJsonUrl);
   setupContactForm();
-  generateSitemap();
 }
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initSite);
