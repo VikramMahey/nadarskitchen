@@ -2,11 +2,11 @@
     .page-hero {
         padding: $section-padding;
         text-align: center;
-        background: $color-surface;
+        background: rgb(215, 215, 215);
 
         .page-title {
             font-size: 2rem;
-            color: $color-heading;
+            color: $color-text;
             margin-bottom: 0.5rem;
         }
 
@@ -27,7 +27,7 @@
             margin-top: 2rem;
             margin-bottom: 0.5rem;
             font-size: 1.25rem;
-            color: $color-heading;
+            color: $color-text;
         }
 
         p {
