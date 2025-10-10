@@ -8,12 +8,14 @@
     "build:bundle": "esbuild assets/js/main.js --bundle --target=es2018 --format=esm --outfile=dist/main.bundle.js",
     "build:obf": "javascript-obfuscator dist/main.bundle.js --output dist/main.final.js --compact true --string-array true --string-array-encoding base64",
     "build:sitemap": "node sitemap.js",
-    "build": "npm run clean && npm run build:bundle && npm run build:obf && npm run build:sitemap",
+    "build:minify": "node minify-html.js",
+    "build": "npm run clean && npm run build:bundle && npm run build:obf && npm run build:sitemap && npm run build:minify",
     "dev": "echo 'Dev mode: using assets/js/main.js directly'"
   },
   "devDependencies": {
     "cssnano": "^7.1.1",
     "esbuild": "^0.18.20",
+    "html-minifier-terser": "^7.2.0",
     "javascript-obfuscator": "^4.1.1",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
