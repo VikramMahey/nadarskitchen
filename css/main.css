@@ -688,6 +688,16 @@
 .menu-preview .menu-grid .menu-item-wrapper:not(.highlight) .menu-special-row {
   display: none;
 }
+@media (max-width: 576px) {
+  .menu-preview .menu-grid .menu-item-wrapper {
+    min-width: 383px;
+  }
+}
+@media (max-width: 480px) {
+  .menu-preview .menu-grid .menu-item-wrapper {
+    min-width: 337px;
+  }
+}
 .menu-preview .menu-grid .menu-day {
   margin: 0 0 0.75rem 0;
   font-size: 25px;
